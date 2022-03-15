@@ -2,7 +2,6 @@ frappe.ui.form.on("Purchase Order", {
   refresh: function(frm) {
     var me = this;
     let doc=frm.doc
-    debugger
     if(doc.docstatus == 1 && doc.status !== 'Closed') {
       if(doc.status !== 'On Hold') {
         					// purchase invoice
