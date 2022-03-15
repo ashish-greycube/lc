@@ -1,7 +1,8 @@
 frappe.ui.form.on("Sales Order", {
-  refresh: function(doc, dt, dn) {
+  refresh: function(frm) {
     var me = this;
-    if(doc.status !== 'Closed') {
+    let doc=frm.doc
+    if(doc.docstatus == 1 && doc.status !== 'Closed') {
       if(doc.status !== 'On Hold') {
         					// sales invoice
 					if(flt(doc.per_billed, 6) < 100) {
